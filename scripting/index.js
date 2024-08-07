@@ -18,5 +18,5 @@
 // greet();
 
 const handleClickExternal = () => {
-  alert("External JS");
+  alert("External JS HEllo BCA");
 };
