@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Button Example</title>
+
+    <script>
+      function handleClickInternal() {
+        alert("Internal JS");
+      }
+    </script>
+  </head>
+
+  <body>
+    <button onclick="handleClickInternal()">Internal</button>
+    <button onclick="alert('Inline JS')">Inline</button>
+    <button onclick="handleClickExternal()">External</button>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
