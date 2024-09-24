@@ -2,7 +2,7 @@
 $servername = 'localhost';
 $username = 'root';
 $password = '';
-$database = 'demoData';
+$database = 'debitCreditTracker';
 
 $con =  new mysqli($servername,$username,$password,$database);
 if($con->connect_error){
