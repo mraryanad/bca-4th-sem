@@ -1,4 +1,23 @@
 <?php
+$servername = 'localhost';
+$username = 'root';
+$password = '';
+$database = 'debitCreditTracker';
+
+$con = new mysqli($servername, $username, $password, $database);
+
+if ($con->connect_error) {
+    die('Connection failed: ' . $con->connect_error);
+}
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+if (!isset($con)) {
+    die('Connection variable not set');
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $isDebitCredit = $_POST['isDebitCredit'];
     $amount = $_POST['amount'];
@@ -9,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $result = $con->query($sql);
 
     if($result == true){
-     header('Location: /crud/transaction.php');
+     header('Location: ../../pages/transaction.php');
     }
 
     $con->close();

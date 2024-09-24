@@ -17,7 +17,7 @@ error_reporting(E_ALL);
 if (!isset($con)) {
     die('Connection variable not set');
 }
-
+        
 if(isset($_GET['ledgerId'])){
     $ledgerId = $_GET['ledgerId'];
 

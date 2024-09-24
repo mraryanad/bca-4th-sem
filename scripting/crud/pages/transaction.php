@@ -1,10 +1,10 @@
 <?php
-include "./services/transactionServices/readTransaction.php";
-include "./services/ledgerServices/readLedger.php";
+include "../services/transactionServices/readTransaction.php";
+include "../services/ledgerServices/readLedger.php";
 ob_start();
 ?>
 
-<form action="./services/transactionServices/createTransaction.php" method="post">
+<form action="../services/transactionServices/createTransaction.php" method="post">
     <label style="display: block;" for=""> Select Debit or Credit</label>
     <select style="display: block; margin-bottom: 10px;" type="text" name="isDebitCredit">
         <option value="">--Select One Below--</option>
@@ -20,7 +20,7 @@ ob_start();
         <option value="">--Select One Below--</option>
         <?php
         foreach($ledger_data as $data){
-            echo "<option value=".$data['id'].">".$data['id']." - ".$data['entity']."</option>";
+            echo "<option value=".$data['ledgerId'].">".$data['ledgerId']." - ".$data['entity']."</option>";
         }
         ?>
     </select>
@@ -45,16 +45,16 @@ ob_start();
         <?php
 	foreach($transaction_data as $row){
 		echo "<tr>";
-		echo "<th scope='row'>".$row['id']."</th>";
+		echo "<th scope='row'>".$row['transactionId']."</th>";
         // echo "<td>".$row["entity"]."</td>";
 		echo "<td>".$row['isDebitCredit']."</td>";
 		echo "<td>".$row['amount']."</td>";
 		echo "<td>".$row['ledgerId']."</td>";
         echo "<td>
-                <a href='editTransaction.php?transactionId=".$row['id']."'>
+                <a href='editTransaction.php?transactionId=".$row['transactionId']."'>
                     <button type='button' class='btn btn-primary'>Edit</button>
                 </a>
-                <a href='./services/transactionServices/deleteTransaction.php?transactionId=".$row['id']."'>
+                <a href='../services/transactionServices/deleteTransaction.php?transactionId=".$row['transactionId']."'>
                     <button type='submit' class='btn btn-danger'>Delete</button>
                 </a>
             </td>";
