@@ -6,11 +6,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
 
     $sql = "INSERT INTO transaction (isDebitCredit, amount, ledgerId) VALUES('$isDebitCredit', '$amount', '$ledgerId')";
-    $result = $conn->query($sql);
+    $result = $con->query($sql);
 
     if($result == true){
      header('Location: /crud/transaction.php');
     }
 
-    $conn->close();
+    $con->close();
 }

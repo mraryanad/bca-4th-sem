@@ -37,15 +37,15 @@ ul > a {
   transition: all 0.2s ease;
 }
 ul > a > li {
-  font: bolder;
+  font-weight: 500;
   padding: 10px 20px;
-  transform: uppercase;
+  text-transform: uppercase;
+  background: white;
   list-style-type: none;
-  background: #00000010;
 }
 
 ul > a > li:hover {
-  color: white;
-  background: #00000080;
+  color: black;
+  background: #00000010;
   transition: all 0.4 ease;
 }

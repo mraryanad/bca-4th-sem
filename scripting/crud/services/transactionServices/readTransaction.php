@@ -1,7 +1,7 @@
 <?php
 $sql_query = "SELECT * FROM transaction";
 
-$result = $conn->query($sql_query);
+$result = $con->query($sql_query);
 
 $transaction_data = [];
 if($result->num_rows>0){
@@ -9,4 +9,4 @@ if($result->num_rows>0){
        $transaction_data[] = $row; 
     }
 }
-$conn->close();
+$con->close();

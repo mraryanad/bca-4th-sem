@@ -3,7 +3,7 @@ if(isset($_GET['transactionId'])){
     $transactionId = $_GET['transactionId'];
 
     $delete_transaction_query = "DELETE FROM `transaction` WHERE `id` = $transactionId";
-    $delete_transaction_result = $conn->query($delete_transaction_query);
+    $delete_transaction_result = $con->query($delete_transaction_query);
 
     if($delete_transaction_result == true){
         header('Location: /crud/transaction.php');
@@ -16,4 +16,4 @@ if(isset($_GET['transactionId'])){
     echo "NO ID PROVIDED!!!";
 }
 
-$conn->close();
+$con->close();

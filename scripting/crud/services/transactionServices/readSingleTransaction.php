@@ -2,7 +2,7 @@
 if(isset($_GET['transactionId'])) {
     $transactionId = intval($_GET['transactionId']);
 
-    $fetch_transaction_result = $conn->query($fetch_transaction_query);
+    $fetch_transaction_result = $con->query($fetch_transaction_query);
 
     if($fetch_transaction_result->num_rows > 0) {
         $transaction = $fetch_transaction_result->fetch_assoc();
@@ -13,4 +13,4 @@ if(isset($_GET['transactionId'])) {
     echo "No ID Provided";
 }
 
-$conn->close();
+$con->close();

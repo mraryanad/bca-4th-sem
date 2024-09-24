@@ -6,7 +6,7 @@ if(isset($_GET['transactionId'])) {
     $ledgerId = $_POST['ledgerId'];
 
     $update_transaction_query = "UPDATE `transaction` SET  `isDebitCredit` = '$isDebitCredit', `amount` = '$amount', `ledgerId` = '$ledgerId' WHERE `id` = '$transactionId'";
-    $stmt = $conn->query($update_transaction_query);
+    $stmt = $con->query($update_transaction_query);
 
     if($stmt == true){
         header('Location: /crud/transaction.php');
@@ -14,4 +14,4 @@ if(isset($_GET['transactionId'])) {
     }
 }
 
-$conn->close();
+$con->close();

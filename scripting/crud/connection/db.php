@@ -4,12 +4,11 @@ $username = 'root';
 $password = '';
 $database = 'debitCreditTracker';
 
-$con =  new mysqli($servername,$username,$password,$database);
-if($con->connect_error){
-    die('connection failed' . $con->connect_error);
+// Create the connection
+$con = new mysqli($servername, $username, $password, $database);
+
+// Check connection
+if ($con->connect_error) {
+    die('Connection failed: ' . $con->connect_error);
 }
-
-echo 'connect successfully';
-
-
-?>
+        

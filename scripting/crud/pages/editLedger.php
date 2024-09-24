@@ -1,9 +1,9 @@
 <?php
-include "./services/ledgerServices/readSingleLedger.php";
+include "../services/ledgerServices/readSingleLedger.php";
 ob_start();
 ?>
 
-<form action="./services/ledgerServices/updateLedger.php<?php echo isset($ledgerId) ? '?ledgerId='.$ledgerId:'';?>"
+<form action="../services/ledgerServices/updateLedger.php<?php echo isset($ledgerId) ? '?ledgerId='.$ledgerId:'';?>"
     method="post">
     <label style="display: block;" for="">Ledger Name </label>
     <input style="display: block; margin-bottom: 10px;" type="text" name="entity"
